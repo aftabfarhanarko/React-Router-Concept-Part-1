@@ -7,6 +7,9 @@ const Suspience = ({userpa}) => {
     return (
         <div>
             <h3>this is Suspiences Data Loading</h3>
+            {
+                user.map(my => <li>{my.email}</li>)
+            }
         </div>
     );
 };

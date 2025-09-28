@@ -8,6 +8,7 @@ import Laptop from "./Componend/Laptop/Laptop.jsx";
 import MyList from "./Componend/MyLise/MyList.jsx";
 import Users from "./Componend/Users/Users.jsx";
 import Suspience from "./Componend/Suspiencs/Suspience.jsx";
+import Clones from "./Componend/Clones/Clones.jsx";
 
 const userpa = fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
   res.json()
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "users/:usersId",
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.usersId}`),
+        Component: Clones,
+      }
     ],
   },
 ]);
