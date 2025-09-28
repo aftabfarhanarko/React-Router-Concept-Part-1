@@ -11,6 +11,7 @@ const Header = () => {
         <NavLink className='mr-5' to="/mylist">MyList</NavLink>
         <NavLink className='mr-5' to="/users">Users</NavLink>
         <NavLink className='mr-5' to="/users2">Users2</NavLink>
+        <NavLink className='mr-5' to="/post">Post</NavLink>
       </nav>
     </div>
   );

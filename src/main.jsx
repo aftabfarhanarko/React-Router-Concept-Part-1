@@ -9,6 +9,8 @@ import MyList from "./Componend/MyLise/MyList.jsx";
 import Users from "./Componend/Users/Users.jsx";
 import Suspience from "./Componend/Suspiencs/Suspience.jsx";
 import Clones from "./Componend/Clones/Clones.jsx";
+import Post from "./Componend/Post/Post.jsx";
+import DisplayPostid from "./Componend/Post/DisplayPostid.jsx";
 
 const userpa = fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
   res.json()
@@ -25,7 +27,8 @@ const router = createBrowserRouter([
       { path: "mylist", element: <MyList></MyList> },
       {
         path: "users",
-        loader: async () => await fetch("https://jsonplaceholder.typicode.com/users"),
+        loader: async () =>
+          await fetch("https://jsonplaceholder.typicode.com/users"),
         Component: Users,
       },
       {
@@ -38,9 +41,21 @@ const router = createBrowserRouter([
       },
       {
         path: "users/:usersId",
-        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.usersId}`),
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.usersId}`),
         Component: Clones,
-      }
+      },
+      {
+        path: "post",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
+        Component: Post,
+      },
+      {
+        path: "post/:postId",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
+        Component: DisplayPostid,
+      },
     ],
   },
 ]);
