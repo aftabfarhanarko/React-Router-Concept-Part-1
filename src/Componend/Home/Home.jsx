@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Home = () => {
-    return (
-        <div>
-            <h1 className='text-2xl text-green-600'>This Is Hopme Pages </h1>
-        </div>
-    );
+  return (
+    <div>
+      <h2 className='text-yellow-600 '>This Is Home</h2>  
+    </div>
+  );
 };
 
 export default Home;
